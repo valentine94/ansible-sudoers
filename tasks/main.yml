@@ -1,0 +1,11 @@
+---
+- name: Ensure sudoers file exist
+  stat:
+    path: /etc/sudoers
+  register: sudoers
+
+- name: Fix sudoers password asking
+  when: sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    line: "{{ ansible_env.SUDO_USER }} ALL=(ALL) NOPASSWD:ALL"
