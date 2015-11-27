@@ -3,13 +3,6 @@
   stat: path='/etc/sudoers'
   register: sudoers
 
-- name: Remove line if exist
-  when: sudoers.stat.exists == true
-  lineinfile:
-    dest: /etc/sudoers
-    regexp: "{{ ansible_env.SUDO_USER }} ALL=(ALL) NOPASSWD:ALL"
-    state: absent
-
 - name: Fix sudoers password asking
   when: sudoers.stat.exists == true
   lineinfile:
