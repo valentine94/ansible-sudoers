@@ -10,5 +10,5 @@ galaxy_info:
       versions:
         - trusty
   categories:
-  - system
-dependencies: []
+    - system
+  dependencies: []
