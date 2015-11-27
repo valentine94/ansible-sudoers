@@ -2,7 +2,7 @@
 galaxy_info:
   author: Valentine Matsveiko
   description: Fixing the sudoers file for caching your sudo pass and asking you only one time.
-  company:
+  company: Drupalway
   license: GPL-2.0
   min_ansible_version: 1.4
   platforms:
