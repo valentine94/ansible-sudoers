@@ -4,7 +4,7 @@
   register: sudoers
 
 - name: Fix sudoers password asking
-  when: sudoers.stat.exists == true
+  when: sudoers.stat.exists == true and ansible_distribution == 'Ubuntu'
   lineinfile:
     dest: /etc/sudoers
     line: "{{ ansible_env.SUDO_USER }} ALL=(ALL) NOPASSWD:ALL"
